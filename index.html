@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="app.js"></script>
+    <script src="src/controllers/appController.js"></script>
+    <script src="src/directives/appDirective.js"></script>
+    <script src="src/providers/appProvider.js"></script>
+   </head>
+
+<body ng-app="Application">
+<header>
+
+    <nav>
+
+        <div class="films-numbers">
+            <div class="dataFilms">
+                <p>il y'a actuelement 20145158 films sur le site.</p>
+            </div>
+        </div>
+
+        <div class="head">
+
+            <div class="logo">
+
+                <img src="assets/images/logo.jpg" alt="">
+
+            </div>
+
+
+            <div class="icons">
+
+                <ul>
+
+                    <li><img src="assets/images/fb-icon.jpg" alt=""></li>
+
+                    <li><img src="assets/images/twitter.jpg" alt=""></li>
+
+                    <li><img src="assets/images/whoknows.jpg" alt=""></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div ng-controller="showsupController" class="header">
+            <div  class="menubar">
+                <div class="menu">
+                    <div class="menu-container">
+                        <ul>
+                            <li ng-show="sh" ng-click="showMenu()"><br>ICON</li>
+                            <li ng-show="visible"><br>Film Streaming</li>
+                            <li ng-show="visible"><br>Film Streaming</li>
+                            <li ng-show="visible"><br>Film Streaming</li>
+                            <li ng-show="visible"><br>Film Streaming</li>
+                            <li ng-show="visible"><br>Serie Streaming</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div ng-mouseover="whileHovering()" ng-mouseleave="whileLeaving()" class="menulist" style="background:{{back}};">
+                <div class="menu-img">
+                    <img style="margin-left: 10px" id="image" src="assets/images/{{src}}" alt="">
+                </div>
+
+                <div ng-show="seen" class="menu-links">
+                    <ul>
+                        <li>Profil</li>
+                        <li>Se connecter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </nav>
+</header>
+
+
+
+<section ng-controller="caroselController" id="box-office-movies">
+
+    <div class="box-office-indicator">
+        <h2>&nbsp;<span>Films Box Office</span>&nbsp;</h2>
+    </div>
+
+    <div class="conteneur">
+        <div class="gauche"><button ng-click="leftClick()">&#10094;</button></div>
+        <div class="carosel">
+            <div id="max-carosel" class="max-carosel">
+                <div class="view-carosel" ng-mouseover="mouseEntering()" ng-mouseleave="mouseLeaving()" ng-repeat="view in views" list-views-directive>
+                </div>
+            </div>
+        </div>
+        <div class="droit"><button ng-click="droiteClick()">&#10095;</button></div>
+    </div>
+</section>
+<section style="width: 100%; height: 30px; position: relative; background: #21242B;"  id="empty">
+
+</section>
+<section id="searchZone">
+    <div class="formulaire">
+        <div class="last-form">
+
+            <form>
+                <input placeholder="Search.." type="text">
+                <button type="submit"><img src="assets/images/button.jpg" alt=""></button>
+            </form>
+        </div>
+
+    </div>
+</section>
+<section style="position: relative">
+    <div style="position: relative" id="latest-movies-series">
+
+        <div class="latest-shows">
+
+            <div class="title-of-latest">
+            <h2><span>Latest Movies</span></h2>
+
+            </div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>Planet of Apes 3</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>Before I Fall</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>Titanic</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>There will be Blood</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>This is the End</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+
+    </div>
+
+    <div class="line">
+
+    </div>
+
+
+
+    <div class="latest-shows">
+        <div class="title-of-latest">
+            <h2><span>Latest Shows</span></h2>
+        </div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>House of Cards season 5 episode 6</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>House of Cards season 5 episode 7</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>House season 3 episode 6</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>Sherlock season 5 episode 6</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+        <div class="latest">
+            <div class="latest-s">
+                <p>Breaking bad season 5 episode 13</p>
+            </div>
+            <div class="images-of-latest">
+                <img src="assets/images/idk.jpg" alt="">
+                <img src="assets/images/flag.png" alt="">
+            </div>
+        </div>
+        <div class="line-between"></div>
+
+    </div>
+    </div>
+
+    <div class="jaime">
+
+
+        <button><img src="" alt="">J'aime 12K</button>
+
+        <button>Partager</button>
+
+    </div>
+
+
+    <div style="position: relative" ng-controller="qualityController" class="dvdlist">
+
+
+        <div class="titre">
+
+            <h3><span>Films par Qualité</span></h3>
+
+        </div>
+
+
+        <div ng-mouseleave="backColor()" ng-mouseover="changeColor()" ng-repeat="quality in qualities" class="data" list-directive-quality>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div ng-controller="vueController" id="shows-list">
+
+        <div class="shows-menu">
+
+            <ul>
+
+                <li><span>NOUVEAUTES</span></li>
+
+                <li><span>LES PLUS VUES</span></li>
+
+                <li><span>LES PLUS COMMENTES</span></li>
+
+                <li><span>LES MIEUX NOTES</span></li>
+
+            </ul>
+
+        </div>
+
+        <div class="all-shows">
+            <div ng-mouseover="changeBack()" ng-mouseleave="backBack()" ng-repeat="vue in vues" class="movie" liste-views-directive="">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div ng-controller="genreQuality" id="genreFilms">
+
+        <div class="titre">
+
+            <h3><span>Films par Genre</span></h3>
+
+        </div>
+
+
+        <div ng-mouseleave="backThing()" ng-mouseover="changeThing()" ng-repeat="genre in genres" class="data-s" list-genre-quality>
+
+
+        </div>
+
+    </div>
+
+
+    <div ng-controller="yearController" id="anneeFilms">
+
+        <div class="titre">
+
+            <h3><span>Films par Genre</span></h3>
+
+        </div>
+
+
+        <div ng-mouseleave="backThiing()" ng-mouseover="changeThiing()" ng-repeat="year in years" class="data-s" list-directive-year>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="jaime">
+        <p>sokrostream.com Webutation</p>
+    </div>
+
+    <div class="footer">
+        <p>Copyright 2017 <a href="">Film streaming, Series streaming</a></p>
+        <p style="color:#CCCCCC; font-size: 11px">Aucun droit est réservé</p>
+    </div>
+</section>
+</body>
+
+</html>
