@@ -103,8 +103,6 @@ app.controller("caroselController",function ($scope,$interval,darkViewsProvider)
         this.view.background = "rgba(0, 0, 0, 0);"
     }
 
-    alert(window.innerWidth)
-
 })
 
 app.controller("vueController",function ($scope,darkViewsProvider) {
